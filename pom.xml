@@ -25,14 +25,17 @@
 				<version>3.2.0</version>
 			</plugin>
 			<plugin>
-				<groupId>org.mule.tools.maven</groupId>
-				<artifactId>mule-maven-plugin</artifactId>
-				<version>${mule.maven.plugin.version}</version>
-				<extensions>true</extensions>
-				<configuration>
-					<classifier>mule-application</classifier>
-				</configuration>
-			</plugin>
+            <groupId>org.mule.tools.maven</groupId>
+            <artifactId>mule-maven-plugin</artifactId>
+            <version>4.3.0</version> <!-- Adjust to the plugin version -->
+            <configuration>
+                <cloudHubDeployment>
+                    <applicationName>${project.artifactId}</applicationName>
+                    <muleVersion>4.3.0</muleVersion> <!-- Adjust Mule runtime version if needed -->
+                    <region>us-east-1</region> <!-- Specify the CloudHub region, like us-east-1 or eu-west-1 -->
+                </cloudHubDeployment>
+            </configuration>
+        </plugin>
 		</plugins>
 	</build>
 
