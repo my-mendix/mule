@@ -31,7 +31,8 @@ jobs:
         run: mvn clean install -DmuleDeploy
 
       - name: Deploy to CloudHub
-        run: mvn mule:deploy -Danypoint.username=${{ secrets.ANYPOINT_USERNAME }} \
+        run: mvn org.mule.tools.maven:mule-maven-plugin:4.3.0:deploy \
+              -Danypoint.username=${{ secrets.ANYPOINT_USERNAME }} \
               -Danypoint.password=${{ secrets.ANYPOINT_PASSWORD }} \
               -Danypoint.environment=${{ secrets.ANYPOINT_ENVIRONMENT }} \
               -Danypoint.organizationId=${{ secrets.ANYPOINT_ORG_ID }} \
