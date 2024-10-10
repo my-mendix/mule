@@ -30,8 +30,12 @@
 				<version>${mule.maven.plugin.version}</version>
 				<extensions>true</extensions>
 				<configuration>
-					<classifier>mule-application</classifier>
-				</configuration>
+                <cloudHubDeployment>
+                    <applicationName>${project.artifactId}</applicationName>
+                    <muleVersion>4.3.0</muleVersion> <!-- Adjust Mule runtime version if needed -->
+                    <region>us-east-1</region> <!-- Specify the CloudHub region, like us-east-1 or eu-west-1 -->
+                </cloudHubDeployment>
+            </configuration>
 			</plugin>
 		</plugins>
 	</build>
@@ -55,7 +59,7 @@
 		<repository>
 			<id>anypoint-exchange-v3</id>
 			<name>Anypoint Exchange</name>
-			<url>https://maven.eu1.anypoint.mulesoft.com/api/v3/maven</url>
+			<url>https://maven.anypoint.mulesoft.com/api/v3/maven</url>
 			<layout>default</layout>
 		</repository>
 		<repository>
